@@ -5,10 +5,13 @@ class Phrase:
         
     def display(self, guesses):
         for letter in self.phrase:
-            if letter in guesses:
-                print('{}'.format(letter), end=" ")
+            if letter == " ":
+                print(" ", end=" ")
             else:
-                print("_", end=" ")
+                if letter in guesses:
+                    print('{}'.format(letter), end=" ")
+                else:
+                    print("_", end=" ")
         
     
     
@@ -19,8 +22,10 @@ class Phrase:
             return False
     
     
-    def check_complete(self,guesses):
+    def check_complete(self, guesses):
         for letter in self.phrase:
-            if letter not in guessess:
+            if letter not in guesses:
+                print("False")
                 return False
+            print("True")
         return True
