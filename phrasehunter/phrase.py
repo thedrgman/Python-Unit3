@@ -25,7 +25,5 @@ class Phrase:
     def check_complete(self, guesses):
         for letter in self.phrase:
             if letter not in guesses:
-                print("False")
                 return False
-            print("True")
         return True
