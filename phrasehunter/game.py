@@ -14,7 +14,7 @@ class Game:
         ]
         self.active_phrase = None
         self.guesses = [" ",]
-        self.lives = 10
+        self.lives = 5
         
         
     def get_random_phrase(self):
@@ -43,7 +43,7 @@ class Game:
         if self.active_phrase.check_complete(self.guesses) == True:
             print("You have won the game")
         else:
-            print("You ran out of guesses. The phrase was {}!".format(self.active_phrase))
+            print("You ran out of guesses.")
         new_game = input("Would you like to play again? Type Y/N")
         if new_game.lower() == 'y':
             self.guesses = [" ",]
@@ -57,6 +57,7 @@ class Game:
         self.missed = 0
         self.get_random_phrase()
         while self.missed < self.lives:
+            print("\n")
             display = self.active_phrase.display(self.guesses)
             user_guess = self.get_guess()
             error = True
@@ -80,7 +81,6 @@ class Game:
             else:
                 self.guesses.append(user_guess)
                 if self.active_phrase.check_letter(user_guess):
-                    print("pass")
                     display
                 else:
                     print("You have guessed an incorrect letter. Try again.")
