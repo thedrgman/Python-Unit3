@@ -43,7 +43,7 @@ class Game:
         if self.active_phrase.check_complete(self.guesses) == True:
             print("You have won the game")
         else:
-            print("You ran out of guesses.")
+            print("You ran out of guesses. The phrase was '{}'.".format(self.active_phrase))
         new_game = input("Would you like to play again? Type Y/N")
         if new_game.lower() == 'y':
             self.guesses = [" ",]
