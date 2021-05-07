@@ -1,6 +1,10 @@
 class Phrase:
     def __init__(self, phrase):
         self.phrase = phrase.lower()
+        
+        
+    def __str__(self):
+        return f'{self.phrase}'
                 
         
     def display(self, guesses):
